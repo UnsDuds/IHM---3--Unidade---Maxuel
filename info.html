@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Funciona o Sistema de Busca</title>
+  <link rel="stylesheet" href="css/info.css">
+  <link rel="icon"  type="image/x-icon" href="src/logo.ico">
+</head>
+<body>
+  <header>
+    <h1>Como Funciona o Sistema de Busca?</h1>
+    <p>Entenda os bastidores do sistema e veja o que você pode pesquisar.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Visão Geral</h2>
+      <p>O sistema de busca permite que você encontre explicações rápidas sobre conceitos de <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>. Ele é implementado em JavaScript, utilizando uma base de dados local para responder rapidamente às consultas sem depender de servidores externos.</p>
+    </section>
+
+    <section>
+      <h2>Como Funciona?</h2>
+      <div class="highlight">
+        <p><strong>Passo a passo:</strong></p>
+        <ol>
+          <li>O usuário insere um termo no campo de pesquisa.</li>
+          <li>O sistema verifica se o termo está presente na base de dados.</li>
+          <li>Se houver uma correspondência, o sistema exibe o termo, sua descrição e um exemplo de código.</li>
+          <li>Se nenhum termo for encontrado, uma mensagem é exibida informando que não houve resultados.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Principais Componentes do Sistema</h2>
+      <ul>
+        <li><strong>Base de Dados:</strong> Armazenada como um objeto JavaScript contendo categorias (HTML, CSS, JavaScript).</li>
+        <li><strong>Função de Busca:</strong> Analisa o termo digitado e retorna resultados correspondentes da base de dados.</li>
+        <li><strong>Interface do Usuário:</strong> Um campo de entrada e um botão para ativar a busca.</li>
+        <li><strong>Exibição Dinâmica:</strong> Os resultados são exibidos de forma estilizada diretamente na página.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Lista de Termos Disponíveis</h2>
+      <p>Abaixo estão os termos que você pode pesquisar no sistema:</p>
+
+      <h3>HTML</h3>
+      <ul>
+        <li><code>div</code>: Um contêiner genérico para organizar elementos.</li>
+        <li><code>h1</code>: Usado para criar títulos principais.</li>
+        <li><code>a</code>: Elemento de link para navegação.</li>
+      </ul>
+
+      <h3>CSS</h3>
+      <ul>
+        <li><code>color</code>: Define a cor do texto.</li>
+        <li><code>margin</code>: Adiciona espaço externo ao redor de elementos.</li>
+        <li><code>display</code>: Controla o comportamento visual de elementos.</li>
+      </ul>
+
+      <h3>JavaScript</h3>
+      <ul>
+        <li><code>function</code>: Declara uma função reutilizável.</li>
+        <li><code>array</code>: Estrutura de dados para coleções.</li>
+        <li><code>event listener</code>: Captura eventos como cliques ou teclas pressionadas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemplo de Lógica de Busca</h2>
+      <p>Abaixo está um exemplo do código usado para a busca:</p>
+      <pre><code>
+        
+    function search(term) {
+      // Limpa o conteúdo anterior do contêiner de resultados para 
+     exibir apenas os novos resultados da pesquisa
+     resultsContainer.innerHTML = ""; 
+          
+     // Variável para rastrear se pelo menos um resultado foi encontrado
+     let found = false;
+          
+     // Percorre cada categoria (html, css, javascript) na base de dados 'data'
+    for (let category in data) {
+     // Itera por cada item dentro da categoria atual
+     data[category].forEach(item => {
+     // Verifica se o termo digitado pelo usuário está incluso 
+     no nome do item (case insensitive)
+     if (item.term.toLowerCase().includes(term.toLowerCase())) {
+     // Marca que um resultado foi encontrado
+     found = true;
+          
+     // Cria um elemento <div> para exibir o resultado
+     const resultDiv = document.createElement('div');
+                  
+     // Preenche o <div> com o termo, sua categoria, descrição e 
+     exemplo formatados em HTML
+     resultDiv.innerHTML = `
+     <h3>${item.term} (${category.toUpperCase()})</h3>
+     <p>${item.description}</p>
+     <pre><code>${item.example}</code></pre>
+     `;
+                  
+     // Adiciona o <div> com o resultado ao contêiner de resultados na página
+     resultsContainer.appendChild(resultDiv);
+     }
+     });
+     }
+          
+     // Se nenhum resultado foi encontrado, exibe uma mensagem 
+     informando isso no contêiner
+     if (!found) {
+     resultsContainer.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+     }
+      }
+          
+      </code></pre>
+    </section>
+    <div class="return-container">
+        <button id="Retornar" ><a href="consulta.html" class="inactive">Retornar</a></button>
+      </div>
+    
+  </main>
+
+  <footer>
+    <p>Desenvolvido por <strong>Projeto X6</strong> &copy; 2024</p>
+  </footer>
+  <script href="js/info.js"></script>
+</body>
+</html>

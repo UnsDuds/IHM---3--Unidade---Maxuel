@@ -1,0 +1,129 @@
+/* feedback.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar{
+    background-color: #363636;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+div.navbar a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.navbar a:hover {
+    background-color: #777;
+  }
+
+.textup {
+    color: #000000;
+    font-weight: 700;
+}
+
+.form-box {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 10px rgba(36, 67, 40, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+form {
+    max-width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #000ed7;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0078d7;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #0a6808;
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #0078d7;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+footer strong {
+    color: #fff;
+}
+
+.container-social img {
+    margin: 0 10px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.container-social img:hover {
+    transform: scale(1.2);
+}

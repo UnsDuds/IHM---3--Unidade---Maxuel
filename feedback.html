@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto X6 - Feedback</title>
+    <link rel="stylesheet" href="css/feedback.css">
+    <link rel="icon"  type="image/x-icon" href="src/logo.ico">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("SEU_PUBLIC_KEY_AQUI"); <!-- Substitua pela chave pública obtida no EmailJS -->
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="active" id="home">Home</a>
+            <a href="consulta.html" id="product">Consultas</a>
+            <a href="site.html">Criar Site</a>
+            <a href="feedback.html" class="active" id="Feedback">Feedback</a>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Deixe seu feedback</h1>
+        <h3>O que achou do site?</h3>
+        <div class="form-box">
+            <div class="textup">
+                <i class="fa fa-solid fa-clock"></i>
+                <strong>so levara 2 minutos!!</strong> 
+            </div>
+            <form id="feedbackForm">
+                <label for="uname">
+                    <i class="fa fa-solid fa-user"></i>
+                    Nome:
+                </label>
+                <input type="text" id="uname" name="uname" required>
+
+                <label for="email">
+                    <i class="fa fa-solid fa-envelope"></i>
+                    Endereço de Email:
+                </label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    Numero de Telefone:
+                </label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label>
+                    <i class="fa-solid fa-face-smile"></i>
+                    Esta satisfeito com o serviço?
+                </label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="satisfy" value="yes" checked>
+                    <label for="yes">Sim</label>
+
+                    <input type="radio" id="no" name="satisfy" value="no">
+                    <label for="no">Não</label>
+                </div>
+
+                <label for="msg">
+                    <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>
+                    Escreva suas Sugestões:
+                </label>
+                <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p><strong>Redes Sociais</strong></p>
+        <div class="Container-Social">
+            <img src="src/icons8-whatsapp-48.png" alt="whatsapp" id="whatsapp">
+            <img src="src/icons8-github-48.png" alt="github" id="github">
+            <img src="src/icons8-instagram-48.png" alt="instagram" id="instagram">
+            <img src="src/icons8-twitterx-48.png" alt="twitter" id="twitter">
+        </div>
+        <p>Desenvolvido por <strong>Projeto X6</strong> &copy; 2024</p>
+    </footer>
+    
+    <script src="js/feedback.js"></script>
+</body>
+</html>
